@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>YEEZY</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://db.onlinewebfonts.com/c/f23dd533e7ead1edf77c514e74fdc55c?family=OCRB" rel="stylesheet">
+  </head>
+  <body>
+    <div class="ordercount">SPLY</div>
+    <div id="addedtobag" class="addedtobag">Added To Bag</div>
+    <div id="containerMain" class="containerMain">
+      <div id="buttonhide" class="buttons">
+
+        
+        <button id='changeTextureButton2' class='button-like-text' onclick="changeColors('changeTextureButton2')"> BLACK</button> 
+        <button id='changeTextureButton1' class='button-like-text' onclick="changeColors('changeTextureButton1')"> WHITE</button>
+      </div>
+      
+      <div class="text" id="text">
+         YZY PODS $200.00 <br>
+        DELIVERY WITHIN 4 WEEKS
+        <br> SIZE <button class="buttonguid" id="button1" onclick="changeColor('button1')">1</button>
+        <button class="buttonguid"  id="button2" onclick="changeColor('button2')">2</button>
+        <button class="buttonguid"  id="button3" onclick="changeColor('button3')">3</button> GUIDE 
+          <br>
+          <button class="buttonguid"  id="orderButton">ORDER</button>
+          <svg style="width: 25px; height: 10px;" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.81 17.4"><defs><style>.cls-1{stroke-width:0px;}</style></defs><polygon class="cls-1" points="7.43 .11 6 1.65 12.45 7.65 .15 7.65 .15 9.75 12.46 9.75 6 15.75 7.43 17.29 16.67 8.7 7.43 .11"></polygon></svg>
+      </div>
+      
+
+      <section  class="slides">
+        <img src="models/Pod.gif" alt="Looping GIF" id="animatedGif" loop>
+      </section>
+      <section  class="slides">
+        <div class="container" id="container1"></div>
+      </section>
+      <section  class="slides">
+        <div class="container" id="container2"></div>
+      </section>
+      <section  class="slides">
+        <div class="container" id="container3"></div>
+      </section>
+      <section  class="slides">
+        <div class="container" id="container4"></div>
+      </section>
+      <section  class="slides">
+        <img src="models/Vinyl.gif" alt="Looping GIF" id="animatedGif" loop>
+      </section>
+    </div>
+    <script type="module" src="js/main.js"></script>
+    <script>
+
+      
+      // Initialize count
+      
+
+    </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const containerMain = document.querySelector('.containerMain');
+    const element = document.getElementById("text");
+    const divToHide = document.getElementById("buttonhide");
+    const ordercount = document.getElementById('ordercount');
+
+    // Define text for each page
+    const pageTexts = [
+      "YZY PODS $200.00 <br> DELIVERY WITHIN 4 WEEKS<br> SIZE <button class='buttonguid' id='button1' onclick='changeColor(\"button1\")'>1</button> <button class='buttonguid' id='button2' onclick='changeColor(\"button2\")'>2</button> <button class='buttonguid' id='button3' onclick='changeColor(\"button3\")'>3</button> GUIDE<br><button class='buttonguid'  id='orderButton'>ORDER</button><svg style=\"width: 25px; height: 10px;\" id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16.81 17.4\"><defs><style>.cls-1{stroke-width:0px;}</style></defs><polygon class=\"cls-1\" points=\"7.43 .11 6 1.65 12.45 7.65 .15 7.65 .15 9.75 12.46 9.75 6 15.75 7.43 17.29 16.67 8.7 7.43 .11\"></polygon></svg>",
+      "VULTURES PANTS $120.00 <br><br> SIZE <button class='buttonguid' id='button1' onclick='changeColor(\"button1\")'>1</button> <button class='buttonguid' id='button2' onclick='changeColor(\"button2\")'>2</button> <button class='buttonguid' id='button3' onclick='changeColor(\"button3\")'>3</button> GUIDE<br><button class='buttonguid'  id='orderButton'>ORDER</button><svg style=\"width: 25px; height: 10px;\" id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16.81 17.4\"><defs><style>.cls-1{stroke-width:0px;}</style></defs><polygon class=\"cls-1\" points=\"7.43 .11 6 1.65 12.45 7.65 .15 7.65 .15 9.75 12.46 9.75 6 15.75 7.43 17.29 16.67 8.7 7.43 .11\"></polygon></svg>",
+      "LONG T $100.00 <br><br> SIZE <button class='buttonguid' id='button1' onclick='changeColor(\"button1\")'>1</button> <button class='buttonguid' id='button2' onclick='changeColor(\"button2\")'>2</button> <button class='buttonguid' id='button3' onclick='changeColor(\"button3\")'>3</button> GUIDE<br><button class='buttonguid'  id='orderButton'>ORDER</button><svg style=\"width: 25px; height: 10px;\" id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16.81 17.4\"><defs><style>.cls-1{stroke-width:0px;}</style></defs><polygon class=\"cls-1\" points=\"7.43 .11 6 1.65 12.45 7.65 .15 7.65 .15 9.75 12.46 9.75 6 15.75 7.43 17.29 16.67 8.7 7.43 .11\"></polygon></svg>",
+      "VULTURES SHORTS $100.00 <br><br> SIZE <button class='buttonguid' id='button1' onclick='changeColor(\"button1\")'>1</button> <button class='buttonguid' id='button2' onclick='changeColor(\"button2\")'>2</button> <button class='buttonguid' id='button3' onclick='changeColor(\"button3\")'>3</button> GUIDE<br><button class='buttonguid'  id='orderButton'>ORDER</button><svg style=\"width: 25px; height: 10px;\" id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16.81 17.4\"><defs><style>.cls-1{stroke-width:0px;}</style></defs><polygon class=\"cls-1\" points=\"7.43 .11 6 1.65 12.45 7.65 .15 7.65 .15 9.75 12.46 9.75 6 15.75 7.43 17.29 16.67 8.7 7.43 .11\"></polygon></svg>",
+      "BOX T $80.00<br><br> SIZE <button class='buttonguid' id='button1' onclick='changeColor(\"button1\")'>1</button> <button class='buttonguid' id='button2' onclick='changeColor(\"button2\")'>2</button> <button class='buttonguid' id='button3' onclick='changeColor(\"button3\")'>3</button> GUIDE<br><button class='buttonguid'  id='orderButton'>ORDER</button><svg style=\"width: 25px; height: 10px;\" id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16.81 17.4\"><defs><style>.cls-1{stroke-width:0px;}</style></defs><polygon class=\"cls-1\" points=\"7.43 .11 6 1.65 12.45 7.65 .15 7.65 .15 9.75 12.46 9.75 6 15.75 7.43 17.29 16.67 8.7 7.43 .11\"></polygon></svg>",
+      "VULTURES <svg style=\"width: 25px; height: 10px;\" id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16.81 17.4\"><defs><style>.cls-1{stroke-width:0px;}</style></defs><polygon class=\"cls-1\" points=\"7.43 .11 6 1.65 12.45 7.65 .15 7.65 .15 9.75 12.46 9.75 6 15.75 7.43 17.29 16.67 8.7 7.43 .11\"></polygon></svg>"
+    ];
+
+    // Hide the div initially
+    divToHide.style.display = "none";
+
+    function debounce(func, delay) {
+  let timeoutId;
+  return function () {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(func, delay);
+  };
+}
+
+
+
+let count = 0;
+containerMain.addEventListener("scroll", debounce(function() {
+  const currentPage = Math.ceil(containerMain.scrollTop / containerMain.clientHeight - 0.2857055664062);
+  console.log(currentPage);
+  console.log('ScrollTop:', containerMain.scrollTop);
+  console.log('ClientHeight:', containerMain.clientHeight);
+        const orderCountElement = document.querySelector('.ordercount');
+      var addedToBag = document.getElementById('addedtobag');
+
+
+      // Update the displayed text based on the current page
+      element.innerHTML = pageTexts[currentPage];
+
+      // Show or hide the div based on the current page
+      if (currentPage === 0 || currentPage === 5) {
+        divToHide.style.display = "none";
+      } else {
+        divToHide.style.display = "block"; // or "inline-block" depending on your needs
+      }
+      if (currentPage === 5) {
+        orderCountElement.style.bottom = '1.75rem';
+      }else {
+        orderCountElement.style.bottom = '8rem';
+      }
+      // Attach event listeners to the buttons after updating the content
+      const changeTextureButton1 = document.getElementById('changeTextureButton1');
+      const changeTextureButton2 = document.getElementById('changeTextureButton2');
+
+    
+      // Function to update the order count
+      function updateOrderCount() {
+        count++;
+        orderCountElement.textContent = `SPLY BAG (${count})`;
+      }
+    
+        addedToBag.style.display = 'none';
+      // Event listener for hiding the order button
+      document.getElementById('orderButton').addEventListener('click', function() {
+        // Your logic to hide the order button goes here
+    
+        // Update the order count
+        updateOrderCount();
+        addedToBag.style.display = 'block';
+    
+      });
+
+          },200));
+        });
+</script>
+
+<script>
+  
+</script>
+
+<script>
+  
+
+  document.addEventListener("DOMContentLoaded", function() {
+    changeColor('button1');
+    changeColors('changeTextureButton2');
+  });
+
+  document.getElementById('button1').style.color = 'black';
+
+
+  function changeColor(buttonId) {
+    
+
+    // Reset all buttons to default color
+    document.getElementById('button1').style.color = 'grey';
+    document.getElementById('button2').style.color = 'grey';
+    document.getElementById('button3').style.color = 'grey';
+
+    // Set the clicked button to black and grey
+    document.getElementById(buttonId).style.color = 'black';
+  }
+
+  function changeColors(buttonIds) {
+    // Reset all buttons to default color
+    document.getElementById('changeTextureButton1').style.color = 'grey';
+    document.getElementById('changeTextureButton2').style.color = 'grey';
+
+    // Set the clicked button to black and grey
+    document.getElementById(buttonIds).style.color = 'black';
+  }
+</script>
+
+<script>
+  // JavaScript function to change button color
+</script>
+</body>
+</html>
